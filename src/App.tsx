@@ -20,7 +20,7 @@ function App() {
     //   <Title>Hello</Title>
     // </Wrapper>
     <div>
-      <Circle bgColor='tomato' />
+      <Circle bgColor='tomato' borderColor="black" text='hello' />
       <Circle bgColor='teal' />
     </div>
   );
