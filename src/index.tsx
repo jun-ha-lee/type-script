@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from 'react-dom/client';
-// import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import App from "./App";
+import { darkTheme, lightTheme } from "./theme"; // theme.ts 
 
 // const darkTheme = {
 //   textColor: "whitesmoke",
@@ -29,5 +30,7 @@ const root = createRoot(container);
 // );
 
 root.render(
-  <App />
+  <ThemeProvider theme={darkTheme}>
+    <App />
+  </ThemeProvider>
 );

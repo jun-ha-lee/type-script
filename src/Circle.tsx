@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components"
 
 interface ContainerProps { // interface는 object가 어떤식으로 보여질지 설명하는것
@@ -22,10 +23,16 @@ interface CircleProps { // interface지정, 이름은 아무렇게나 지어도 
 function Circle({ bgColor, borderColor, text = 'default text' }: CircleProps) { // Circle컴포넌트를 App.tsx에 넘기는데 bgColor가 뭔지 모르기때문에 CircleProps인터페이스 지정
   // typescript는 bgColor가 뭔지 모르기 때문에 interface를 해야한다
   // text가 App에서 없다면 기본값으로 default text가 나온다. App에 있다면 App에 있는 글자가 나온다(js구문)
-  return <Container bgColor={bgColor} borderColor={borderColor ?? 'white'}>
+
+  // useState********************************************************************
+  // const [counter, setCounter] = useState<number | string>(1); // 초기값을 숫자 혹은 문자로 정한다
+  // setCounter(2); // 맞음
+  // setCounter(); // 숫자 혹은 문자가 아니라서 에러 발생
+
+  return <Container bgColor={bgColor} borderColor={borderColor ?? 'blue'}>
     {text}
   </Container>; // <Container>가 bgColor을 넘기는데 뭔지 모르기 때문에 ContainerProps인터페이스 지정
-  // borderColor가 undefined상태라면 white로 지정
+  // borderColor가 undefined상태라면 blue로 지정
   /*
   ?? (Null 병합 연산자 (Nullish coalescing operator))
 
